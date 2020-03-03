@@ -52,3 +52,15 @@
   }
 ?>
 ```
+* id 값에 따라 database안에 있는 내용 불러오기
+```php
+<?php
+  if(empty($_GET['id'])===false){
+    $sql = 'SELECT * FROM topic WHERE id='.$_GET['id'];
+    $result = mysqli_query($conn, $sql);
+    $row = mysqli_fetch_assoc($result);
+    echo '<h2>'.$row['title'].'</h2>';
+    echo $row['description'];
+   };
+?>
+```
