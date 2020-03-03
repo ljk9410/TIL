@@ -64,3 +64,16 @@
    };
 ?>
 ```
+
+# Form tag
+사용자가 web상에 입력한 정보를 server로 전송하는 것
+```html
+<form action="url" method="GET">
+  <p>제목: <input type="text" name="title"/></p>
+  <p>본문: <textarea name="description"></textarea></p>
+  <input type="submit"/>
+</form>
+```
+- method="GET"은 url로 정보를 전송하는 방법 -> 정보의 길이에 한계가 존재
+- method="POST"는 긴 정보를 보낼 수 있는 방법
+- 받을 때에도 $_GET['title'], $_POST['title'] 같이 방법을 다르게 해야한다.
