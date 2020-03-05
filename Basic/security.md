@@ -22,3 +22,62 @@
 ?>
 ```
 - 자신이 원하는 html태그만 선별적으로 기능하게 할 수 있는 함수
+
+### Login application에 활용
+* 기본적인 로그인 어플리케이션
+```php
+<?php
+  $conn = mysqli_connect('localhost','root','mypwd');
+  mysqli_select_db($conn,'opentutorials');
+  $sql = "SELECT * FROM user WHERE name='".$_GET['name']."' AND 
+  password='".$_GET['password']."'";
+  $result = mysqli_query($conn,$sql);
+ ?>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <?php
+      if($result->num_rows=="1"){
+        echo "환영합니다 ".$_GET['name'].'님';
+      } else{
+        echo "누구십니까?";
+      }
+     ?>
+  </body>
+</html>
+```
+이 경우 cracker가 url의 입력값을 조작해서 정보를 빼낼 수 있다.
+
+* mysqli_real_escape_string을 이용하여 이를 막기
+```php
+<?php
+  $conn = mysqli_connect('localhost','root','mypwd');
+  mysqli_select_db($conn,'opentutorials');
+  $name = mysqli_real_escape_string($conn,$_GET['name']);
+  $password = mysqli_real_escape_string($conn,$_GET['password']);
+  $sql = "SELECT * FROM user WHERE name='".$name."' AND
+  password='".$password."'";
+  echo $sql;
+  $result = mysqli_query($conn,$sql);
+ ?>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <?php
+      if($result->num_rows=="0"){
+        echo "누구십니까?";
+      } else{
+        echo "환영합니다 ".$_GET['name'].'님';
+      }
+     ?>
+  </body>
+</html>
+```
+
+### 보안에 대한 감수성 기르기!
