@@ -6,33 +6,12 @@ body.white{
   background-color: white;
   color: black;
 }
-header{
-  border-bottom: 1px solid gray;
-  padding: 20px;
-}
-nav{
-  border-right: 1px solid gray;
-  width: 180px;
-  height: 600px;
-  float: left;
-}
-nav ol{
-  list-style: none;
-  padding-left: 0px;
-}
-article{
-  float: left;
-  width: 500px;
-  padding: 40px;
-}
-h2{
-  font-size: 20px;
-}
-header img{
-  float: right;
+#logo{
   width: 100px;
-  height: 100px;
+}
+.container{
+  padding-top: 20px;
 }
 #control{
-  float: right;
+  margin-bottom: 40px;
 }
