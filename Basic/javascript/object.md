@@ -28,3 +28,29 @@ imgs[0].style.width = '300px';
 ```js
 alert('hello world');
 ```
+* confirm
+확인과 취소창이 존재   
+확인을 누르면 true, 취소를 누르면 false 값을 리턴
+```js
+confirm('hello world');
+```
+
+* prompt
+사용자가 입력한 값을 받을 수 있는 기능
+```html
+  <input type="button" value="prompt" onclick="func_prompt()">
+  <script>
+    function func_prompt(){
+      if(prompt('id?')==='egoing'){
+        alert('welcome');
+      } else {
+        alert('cancel');
+      };
+    };
+  </script>
+```
+
+### Location 객체
+웹브라우저의 현재 url 정보를 알려주는 객체   
+* location.toString(),location.href
+* location.protocol,host,port,pathname,search,hash 등
