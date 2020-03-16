@@ -80,3 +80,16 @@ function hi(name, age) {
 hi("jung kyu",27);
 ```
   
+### Condition
+if-else를 이용해서, true이면 if 안에 있는 것을 false이면 else안에 것을 return
+```js
+const age = prompt("How old are you?");
+
+if(age >= 18 && age <= 21){
+  console.log('You can drink but should not');
+} else if(age > 21){
+  console.log('Drink');
+} else{
+  console.log('You cannot drink');
+};
+```
