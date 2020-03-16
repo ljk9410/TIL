@@ -35,7 +35,6 @@ const array = [
 ];
 console.log(array);
 ```
-
   * Object   
   기본적으로 array와 같지만, 변수의 value를 지정할 수 있고,   
   object안에 array와 object를 또 다시 쓸 수 있다.
@@ -59,3 +58,25 @@ const object = {
 };
 console.log(object);
 ```
+
+### Function
+함수, 코드를 내가 원하는만큼 재활용해주는 것
+
+ * 함수 만들기   
+ ```js
+ function hi() {
+  console.log("hi")
+ };
+ ```
+ * Argument   
+ 인자, 함수 () 안에 무언가를 받을 때 사용   
+ 인자는 무제한으로 사용할 수 있다.
+```js
+function hi(name, age) {
+ console.log(
+ "Hi", name,
+ "How old are you?", age
+};
+hi("jung kyu",27);
+```
+  
