@@ -93,3 +93,19 @@ if(age >= 18 && age <= 21){
   console.log('You cannot drink');
 };
 ```
+
+### Toggle
+argument가 있으면 remove, 없으면 add 해주는 함수
+```js
+//기본
+const CLICKED_CLASS = "clicked";
+const hasClass = title.classList.contains(CLICKED_CLASS);
+  if(hasClass){
+    title.classList.remove(CLICKED_CLASS);
+  } else {
+    title.classList.add(CLICKED_CLASS);
+  }
+//toggle
+const CLICKED_CLASS = "clicked";
+title.classList.toggle(CLICKED_CLASS);
+```
